@@ -8,7 +8,7 @@ exports.handler = async function () {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      captcha: `https://gioye.github.io/Captcha/captchas/${code}.png`,
+      captcha: `https://captcha.js.org/captchas/${code}.png`,
       correct: code
     })
   };
