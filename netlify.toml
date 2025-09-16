@@ -4,13 +4,13 @@
 
 [[redirects]]
   from = "/"
-  to = "/.netlify/functions/captcha"
+  to = "/.netlify/website"
   status = 200
 
 [[redirects]]
-  from = "/api/captcha"
+  from = "/api"
   to = "/.netlify/functions/captcha"
-  status = 418
+  status = 200
 
 [[redirects]]
   from = "/hack"
