@@ -14,7 +14,7 @@
 
 [[redirects]]
   from = "/playground"
-  to = "/.netlify/website/index"
+  to = "/.netlify/website/index.html"
   status = 200
 
 
