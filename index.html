@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Captcha JSON API</title>
+  <script>
+    // Generate random number between 1 and 288, zero-padded
+    const num = Math.floor(Math.random() * 288) + 1;
+    const code = num.toString().padStart(3, '0');
+
+    const json = {
+      captcha: `https://gioye.github.io/Captcha/captchas/${code}.png`,
+      correct: code
+    };
+
+    // Return JSON instead of HTML
+    document.addEventListener("DOMContentLoaded", () => {
+      const pre = document.createElement('pre');
+      pre.textContent = JSON.stringify(json, null, 2);
+      document.body.innerHTML = '';
+      document.body.appendChild(pre);
+
+      // Set correct headers for JSON
+      const blob = new Blob([JSON.stringify(json)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      window.location.href = url;
+    });
+  </script>
+</head>
+<body>
+  Loading...
+</body>
+</html>
