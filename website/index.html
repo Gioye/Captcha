@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Captcha Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    img {
+      margin: 20px 0;
+      max-width: 100%;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 100px;
+      text-align: center;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Captcha Checker</h1>
+  <div>
+    <img id="captchaImg" src="" alt="Captcha" />
+  </div>
+  <div>
+    <input type="text" id="answerInput" placeholder="Enter captcha" />
+    <button id="checkBtn">Check</button>
+  </div>
+  <div>
+    <button id="newCaptchaBtn">New Captcha</button>
+  </div>
+  <div class="result" id="result"></div>
+
+  <script>
+    const captchaImg = document.getElementById('captchaImg');
+    const answerInput = document.getElementById('answerInput');
+    const checkBtn = document.getElementById('checkBtn');
+    const newCaptchaBtn = document.getElementById('newCaptchaBtn');
+    const resultDiv = document.getElementById('result');
+
+    let correctAnswer = '';
+
+    async function loadCaptcha() {
+      resultDiv.textContent = '';
+      answerInput.value = '';
+      try {
+        const response = await fetch('https://wowcaptcha.netlify.app/');
+        const data = await response.json();
+        captchaImg.src = data.captcha;
+        correctAnswer = data.correct;
+      } catch (error) {
+        resultDiv.textContent = 'Failed to load captcha. Try again.';
+        captchaImg.src = '';
+      }
+    }
+
+    checkBtn.addEventListener('click', () => {
+      const userAnswer = answerInput.value.trim();
+      if (!userAnswer) {
+        resultDiv.textContent = 'Please enter the captcha answer.';
+        return;
+      }
+      if (userAnswer === correctAnswer) {
+        resultDiv.style.color = 'green';
+        resultDiv.textContent = 'Correct! 🎉';
+      } else {
+        resultDiv.style.color = 'red';
+        resultDiv.textContent = 'Wrong answer, try again.';
+      }
+    });
+
+    newCaptchaBtn.addEventListener('click', loadCaptcha);
+
+    // Load captcha on page load
+    loadCaptcha();
+  </script>
+</body>
+</html>
