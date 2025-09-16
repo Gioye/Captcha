@@ -10,12 +10,12 @@
 [[redirects]]
   from = "/api/captcha"
   to = "/.netlify/functions/captcha"
-  status = 200
+  status = 418
 
 [[redirects]]
-  from = "/playground"
-  to = "/.netlify/website/index.html"
-  status = 200
+  from = "/hack"
+  to = "https://youtu.be/dQw4w9WgXcQ?si=v9-hFSS3_IlxeTXF"
+  status = 418
 
 
 
