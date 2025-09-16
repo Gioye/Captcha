@@ -2,10 +2,6 @@
   functions = "functions"
   publish = "."
 
-[[redirects]]
-  from = "/"
-  to = "/.netlify/website"
-  status = 200
 
 [[redirects]]
   from = "/api"
