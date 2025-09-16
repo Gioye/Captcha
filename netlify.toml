@@ -12,4 +12,10 @@
   to = "/.netlify/functions/captcha"
   status = 200
 
+[[redirects]]
+  from = "/playground"
+  to = "/.netlify/website/index"
+  status = 200
+
+
 
