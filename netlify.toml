@@ -3,13 +3,13 @@
   publish = "."
 
 [[redirects]]
-  from = "/api/captcha"
-  to = "/.netlify/functions/captcha"
-  status = 200
   from = "/"
   to = "/.netlify/functions/captcha"
   status = 200
-    from = ""
+
+[[redirects]]
+  from = "/api/captcha"
   to = "/.netlify/functions/captcha"
   status = 200
+
 
