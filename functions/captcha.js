@@ -8,7 +8,7 @@ exports.handler = async function () {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      captcha: `https://captcha.js.org/captchas/${code}.png`,
+      captcha: `https://wowcaptcha.netlify.app/captchas/${code}.png`,
       correct: code
     })
   };
