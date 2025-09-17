@@ -1,0 +1,11 @@
+{
+  "name": "captcha-uploader",
+  "version": "1.0.0",
+  "description": "Netlify function to fetch captcha image and upload to Litterbox",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.9"
+  }
+}
