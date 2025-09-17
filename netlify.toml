@@ -1,8 +1,6 @@
 [build]
   functions = "functions"
   publish = "."
-  publishOrigin: config
-  functionsDirectory: /opt/build/repo/functions
 
 
 [[redirects]]
