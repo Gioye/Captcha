@@ -48,9 +48,9 @@
   </div>
   <div class="result" id="result"></div>
 
-  <h2>captcha.js.org is a Text Captcha API Coded 100% on JavaScript. when using captcha.js.org/api/, you get the captcha code "correct" and the image "captcha".</h2>
-  <h2>aside from being fast and one of the best options for website and API developers, this is so simple it can be implemented in almost everything.</h2>
-  <h2>Adding This API To Your Website? You need https://pastebin.com/raw/NhK8ZTTC and an example of usage is https://pastebin.com/raw/R9HMuM2H</h2>
+  <h2>m8captcha.js.org is a Text Captcha API Coded 100% on JavaScript. when using m8captcha.js.org/api/, you get the captcha code "correct" and the image "captcha".</h2>
+  <h2>use our API endpoint "m8captcha.js.org/api/" to implement the captcha in your codes. the API answers like: {"captcha":"https://example.com/captchaimage.png","correct":"275"}</h2>
+
 
   <script>
     const captchaImg = document.getElementById('captchaImg');
@@ -65,7 +65,7 @@
       resultDiv.textContent = '';
       answerInput.value = '';
       try {
-        const response = await fetch('https://captcha.js.org/api/');
+        const response = await fetch('https://m8captcha.js.org/api/');
         const data = await response.json();
         captchaImg.src = data.captcha;
         correctAnswer = data.correct;
