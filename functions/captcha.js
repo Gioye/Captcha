@@ -21,7 +21,7 @@ exports.handler = async function () {
   const FormData = require('form-data');
   const form = new FormData();
   form.append('reqtype', 'fileupload');
-  form.append('time', '24h');
+  form.append('time', '1h');
   form.append('fileToUpload', imageBuffer, {
     filename: `${code}.png`,
     contentType: 'image/png'
